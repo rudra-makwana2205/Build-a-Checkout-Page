@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #1a1a1a;
+      background-color: #f9fafb;
+    }
+    h1 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    section {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+    .help-text {
+      margin-top: 0.35rem;
+      font-size: 0.875rem;
+      color: #4b5563;
+    }
+    .required-asterisk {
+      color: #dc2626;
+      margin-left: 0.2rem;
+    }
+    button[type="submit"] {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Checkout</h1>
+
+  <!-- First Section: Your Cart -->
+  <section>
+    <h2>Your Cart</h2>
+    <div class="cart-item">
+      <img src="https://cdn.freecodecamp.org/curriculum/labs/cube.jpg" alt="Rubik's style 3D puzzle cube" />
+      <div>
+        <p><strong>3D Puzzle Cube</strong></p>
+        <p>Qty: 1 — $19.99</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second Section: Payment Information -->
+  <section>
+    <h2>Payment Information</h2>
+    <form>
+      <!-- Cardholder Name -->
+      <div class="form-group">
+        <label for="card-name">
+          Name on Card<span class="required-asterisk" aria-hidden="true">*</span>
+        </label>
+        <input type="text" id="card-name" name="card-name" required />
+      </div>
+
+      <!-- Card Number -->
+      <div class="form-group">
+        <label for="card-number">
+          Card Number<span class="required-asterisk" aria-hidden="true">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="card-number" 
+          name="card-number" 
+          aria-describedby="card-number-help" 
+          required 
+        />
+        <p id="card-number-help" class="help-text">
+          Enter a 16-digit card number without spaces or dashes.
+        </p>
+      </div>
+
+      <button type="submit">Complete Purchase</button>
+    </form>
+  </section>
+
+</body>
+</html>
